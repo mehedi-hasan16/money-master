@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>money master</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <header>
+        <h1>Money Master</h1>
+
+    </header>
+    <main>
+        <section class="container">
+            
+            <img src="banner.jpg" alt="">
+         
+            
+                <div class="input-container">
+                <h4>Income</h4>
+                <div>
+                    <p>Income:</p>
+                    <input type="number" name="number" id="total-income">
+                </div>
+                <h4>Expances</h4>
+                <div>
+                    <p>Food:</p>
+                    <input type="number" name="" id="food-cost" >
+                </div>
+                <div>
+                    <p>Rent:</p>
+                    <input type="number" name="" id="rent-cost">
+                </div>
+                <div>
+                    <p>Clothes:</p>
+                    <input type="number" name="" id="clothes-cost">
+                </div>
+                <button id="calculate-btn" class="btn">Calculate</button>
+                <h4>Total Expenses: <span id="total-expense"></span></h4>
+                <h4>Balance: <span id="balance"></span></h4>
+                <p>Save</p>
+                <input type="number" name="" id="save-percentage">
+                <p>%</p>
+                <button id="save-btn" class="btn">Save</button>
+                <h4>Saving amount: <span id="saving-amount"></span></h4>
+                <h4>Remaing balance: <span id="remaining-balance"></span></h4>
+            
+            </div>
+        </section>
+    </main>
+    <script>
+
+        document.getElementById('calculate-btn').addEventListener("click",function(){
+            const foodCost = parseFloat(document.getElementById('food-cost').value);
+         
+            const rentCost = parseFloat(document.getElementById('rent-cost').value);
+        
+            const clothesCost = parseFloat(document.getElementById('clothes-cost').value);
+
+            const expancesSum = foodCost+rentCost+clothesCost;
+
+            const totalExpenses = document.getElementById('total-expense')
+
+            totalExpenses.innerText= expancesSum;
+
+            const tatalIncome = parseFloat(document.getElementById('total-income').value);
+
+            const balance = document.getElementById('balance');
+
+            const recentBalance = tatalIncome -  expancesSum;
+    
+
+            balance.innerText= recentBalance;
+        })
+
+        document.getElementById('save-btn').addEventListener('click',function(){
+            const totalIncome = parseFloat(document.getElementById('total-income').value);
+            const persentage = parseFloat(document.getElementById('save-percentage').value);
+            const saveAmount = parseFloat((totalIncome*persentage)/100)
+            const savingAmount = document.getElementById('saving-amount');
+            savingAmount.innerText= saveAmount;
+
+            const balance =parseFloat( document.getElementById('balance').innerText);
+            console.log(balance)
+            const remainingBalance = balance - saveAmount;
+            document.getElementById('remaining-balance').innerText = remainingBalance; 
+        })
+    </script>
+</body>
+</html>

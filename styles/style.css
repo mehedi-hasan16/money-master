@@ -1,0 +1,40 @@
+header h1{
+    color: green;
+    text-align: center;
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10%;
+}
+.input-container p{
+    display:inline-block;
+}
+.input-container{
+    background-color: rgba(128, 128, 128, 0.418);
+    padding:10px 50px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 20px gray;
+}
+.btn{
+
+    background-color: goldenrod;
+    padding:7px 10px;
+    border: 1px solid goldenrod;
+    border-radius: 5px;
+    color: white;
+}
+
+.btn:hover{
+    background-color: rgba(128, 128, 128, 0.418);
+    cursor: pointer;
+    color: black;
+    border: 1px solid goldenrod;
+}
+input{
+    padding:7px 10px;
+    border-radius: 5px;
+    border: none;
+}
+
